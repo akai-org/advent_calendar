@@ -1,4 +1,4 @@
-# Aplikacja Lekarz (nazwa robocza)
+# Kalendarz adwentowy (nazwa robocza)
 
 ## How to install
 1. Download repo, 
