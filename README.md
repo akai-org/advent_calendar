@@ -1,4 +1,4 @@
-# Kalendarz adwentowy (nazwa robocza)
+# Kalendarz adwentowy (nazwa robocza albo nie)
 
 ## How to install
 1. Download repo, 
