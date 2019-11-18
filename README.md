@@ -18,4 +18,4 @@
 If you installed new pip dependency you need to allow others to know about it. To do so it is best to save all requirements
 in one file, which in this case in named `requirements.txt`. You can do this by typing following command: 
 
-`pip freeze > requirements.txt` 
+`pip freeze > requirements.txt`
