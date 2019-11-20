@@ -4,12 +4,12 @@ from django.db import models
 class Task(models.Model):
     NOVICE = 'Po prostu kod'
     APPRENTICE = 'Dokumentacja i kod'
-    ADEPT = 'Krew, overflow i łzy'
+    ADEPT = 'Krew, Stack Overflow i łzy'
     EXPERT = 'Droga ku depresji'
     TIER = (
         (NOVICE, 'Po prostu kod'),
         (APPRENTICE, 'Dokumentacja i kod'),
-        (ADEPT, 'Krew, overflow i łzy'),
+        (ADEPT, 'Krew, Stack Overflow i łzy'),
         (EXPERT, 'Droga ku depresji'),
     )
     title = models.CharField(max_length=64)
