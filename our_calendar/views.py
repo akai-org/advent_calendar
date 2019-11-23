@@ -5,7 +5,6 @@ from .models import Task
 from rest_framework import status
 from rest_framework.decorators import api_view
 
-
 class TaskViewset(viewsets.ModelViewSet):
     serializer_class = TaskSerializer
     queryset = Task.objects.all()

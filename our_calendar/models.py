@@ -30,7 +30,10 @@ class Answer(models.Model):
     is_checked = models.BooleanField(default=False)
     is_correct = models.BooleanField()
 
+    def __str__(self):
+        return str(self.title) + " " + str(self.date)
+      
     class Meta:
-        constraints = [
-            models.UniqueConstraint(fields=['email', 'task'], name='unique key')
-        ]
+      constraints = [
+          models.UniqueConstraint(fields=['email', 'task'], name='unique key')
+      ]
