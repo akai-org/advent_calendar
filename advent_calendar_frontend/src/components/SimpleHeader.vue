@@ -1,0 +1,37 @@
+<template>
+  <div class="simple-navbar">
+    <div class="navbar-link" v-if="currentTask - 1 >= 1">
+      <router-link :to="`/task/${currentTask - 1}`">
+        Poprzedni dzień
+      </router-link>
+    </div>
+    <div class="navbar-link">
+      <router-link to="/" >Strona główna</router-link>
+    </div>
+    <div class="navbar-link" v-if="currentTask + 1 <= 24">
+      <router-link :to="`/task/${currentTask + 1}`">
+        Następny dzień
+      </router-link>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  computed: {
+    currentTask() {
+      return Number(this.$route.params.id);
+    },
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+.simple-navbar {
+  display: flex;
+
+  .navbar-link {
+    flex: 1 1 0;
+  }
+}
+</style>
