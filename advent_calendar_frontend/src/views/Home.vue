@@ -7,17 +7,20 @@
 </template>
 
 <style lang="scss" scoped>
-$first-background: #ffd7bb;
-$second-background: #fff2f2;
-$text-color: #0e0d0d;
+$first-background: #d39569d0;
+//$second-background: #ffffffcc;
+$text-color: #ffffff;
+
 
 .main-page {
+  margin-left: 10%;
   display: flex;
   flex-flow: row wrap;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
   .day-link {
     box-sizing: border-box;
-    width: 25%;
+    width: 15%;
     height: (100% / 6);
     padding: 0.65rem;
 
@@ -42,15 +45,15 @@ $text-color: #0e0d0d;
   .day-link:nth-child(8n+3),
   .day-link:nth-child(8n+6),
   .day-link:nth-child(8n) {
-    background: $first-background;
+  background: $first-background;
 
     &:hover,
     &:focus {
-      background-color: darken($first-background, 4%);
+     background-color: darken($first-background, 4%);
     }
 
     &:active {
-      background-color: darken($first-background, 7%);
+    background-color: darken($first-background, 7%);
     }
   }
 
@@ -58,15 +61,15 @@ $text-color: #0e0d0d;
   .day-link:nth-child(8n+4),
   .day-link:nth-child(8n+5),
   .day-link:nth-child(8n+7) {
-    background: $second-background;
+  background: $first-background;
 
     &:hover,
     &:focus {
-      background-color: darken($second-background, 4%);
+    background-color: darken($first-background, 4%);
     }
 
     &:active {
-      background-color: darken($second-background, 7%);
+    background-color: darken($first-background, 7%);
     }
   }
 }

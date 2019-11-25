@@ -61,3 +61,10 @@ export default {
   },
 };
 </script>
+<style lang="scss">
+h1{
+  text-align: center;
+  color:#FFFF;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+</style>

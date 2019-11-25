@@ -5,15 +5,16 @@
 </template>
 
 <style lang="scss" scoped>
-$header-background: #68191B;
-$text-color: #fffefb;
+//$header-background: #68191B;
+$text-color: #f1eae2;
 
 .main-header {
-  background: $header-background;
+  //background: $header-background;
   color: $text-color;
 
   h1 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
     font-size: 2.45rem;
     margin: 0.85rem 1.45rem;
   }

@@ -27,7 +27,7 @@ export default {
 </script>
 
 <style lang="scss">
-$app-background: #fffefb;
+//$app-background: #fffefb;
 
 html,
 body,
@@ -39,7 +39,7 @@ body,
 
 body {
   font-family: 'Open Sans', sans-serif;
-  background-color: $app-background;
+  background-image:url(img.jpg);
 }
 
 .app {

@@ -6,6 +6,8 @@
 
 <style lang="scss" scoped>
 .footer {
+  color: #ffffff;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   display: flex;
   justify-content: center;
   align-items: center;
