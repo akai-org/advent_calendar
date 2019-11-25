@@ -6,9 +6,6 @@
 
 <style lang="scss" scoped>
 .footer {
-  height: 65px;
-  margin-top: auto;
-
   display: flex;
   justify-content: center;
   align-items: center;
