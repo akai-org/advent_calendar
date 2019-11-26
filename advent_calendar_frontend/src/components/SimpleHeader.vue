@@ -32,7 +32,7 @@ $text-color: #ffffff;
 
 .simple-navbar {
   display: flex;
-  height: 80px;
+  height: 70px;
 
   .navbar-link {
     flex: 1 1 0;
@@ -55,7 +55,7 @@ $text-color: #ffffff;
 
       background: $link-background;
       color: $text-color;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       text-decoration: none;
 
       &:visited,

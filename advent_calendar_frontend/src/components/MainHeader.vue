@@ -9,7 +9,7 @@ $text-color: #f1eae2;
 
 .main-header {
   color: $text-color;
-  height: 90px;
+  height: 95px;
 
   display: flex;
   justify-content: center;
