@@ -1,75 +1,72 @@
 <template>
   <div class="main-page">
-    <router-link  v-for="index in 24" :key="index" :to="`/task/${index}`" class="day-link">
-      {{ index }}
-    </router-link>
+    <div class="main-page__container">
+      <div v-for="index in 24" :key="index" class="day-link">
+        <router-link :to="`/task/${index}`" class="day-link__tag">
+          {{ index }}
+        </router-link>
+      </div>
+    </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-$first-background: #d39569d0;
-//$second-background: #ffffffcc;
+$link-background: #d39569d0;
 $text-color: #ffffff;
 
-
 .main-page {
-  margin-left: 10%;
   display: flex;
-  flex-flow: row wrap;
+  justify-content: center;
+
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
-  .day-link {
-    box-sizing: border-box;
-    width: 15%;
-    height: (100% / 6);
-    padding: 0.65rem;
+  &__container {
+    width: 80%;
 
     display: flex;
-    justify-content: center;
+    flex-flow: row wrap;
+  }
+
+  .day-link {
+    height: (100% / 6);
+    width: 15%;
+
+    margin: 1rem 0.65rem;
+
     align-items: center;
+    display: flex;
+    justify-content: center;
 
-    text-decoration: none;
-    color: $text-color;
-    font-size: 1.5rem;
+    &__tag {
+      border-radius: 8px;
+      box-sizing: border-box;
+      height: 100%;
+      width: 100%;
 
-    &:visited,
-    &:hover,
-    &:active,
-    &:focus {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+
+      background: $link-background;
       color: $text-color;
-    }
-  }
+      font-size: 1.5rem;
+      text-decoration: none;
 
+      &:visited,
+      &:hover,
+      &:active,
+      &:focus {
+        color: $text-color;
+      }
 
-  .day-link:nth-child(8n+1),
-  .day-link:nth-child(8n+3),
-  .day-link:nth-child(8n+6),
-  .day-link:nth-child(8n) {
-  background: $first-background;
+      &:hover,
+      &:focus {
+        background-color: darken($link-background, 6.5%);
+      }
 
-    &:hover,
-    &:focus {
-     background-color: darken($first-background, 4%);
-    }
-
-    &:active {
-    background-color: darken($first-background, 7%);
-    }
-  }
-
-  .day-link:nth-child(8n+2),
-  .day-link:nth-child(8n+4),
-  .day-link:nth-child(8n+5),
-  .day-link:nth-child(8n+7) {
-  background: $first-background;
-
-    &:hover,
-    &:focus {
-    background-color: darken($first-background, 4%);
-    }
-
-    &:active {
-    background-color: darken($first-background, 7%);
+      &:active {
+        background-color: darken($link-background, 11%);
+      }
     }
   }
 }
