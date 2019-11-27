@@ -12,25 +12,18 @@ class Task(models.Model):
         (ADEPT, 'Krew, Stack Overflow i łzy'),
         (EXPERT, 'Droga ku depresji'),
     )
-    title = models.CharField(max_length=64)
+    title = models.CharField(max_length=127)
     content = models.TextField()
     date = models.DateField()
-    level = models.CharField(max_length = 32, choices=TIER)
-
-    def __str__(self):
-        return str(self.title) + " " + str(self.date)
+    level = models.CharField(max_length = 31, choices=TIER)
 
 
 class Answer(models.Model):
     task = models.ForeignKey(Task, on_delete=models.CASCADE)
     date = models.DateField(auto_now_add=True)
     email = models.EmailField()
-    file = models.FileField(upload_to='answers/%Y/%m/%d/',blank=True, null=True)
-    url = models.URLField(blank=True, null=True)
+    file = models.FileField(upload_to='answers/%Y/%m/%d/',blank=True)
+    url = models.URLField(blank=True)
     is_checked = models.BooleanField(default=False)
     is_correct = models.BooleanField()
-
-    class Meta:
-        constraints = [
-            models.UniqueConstraint(fields=['email', 'task'], name='unique key')
-        ]
+    superkey = models.CharField(max_length=127, primary_key=True)
