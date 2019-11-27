@@ -10,19 +10,21 @@
 $first-background: #d39569d0;
 //$second-background: #ffffffcc;
 $text-color: #ffffff;
-
+$radius:20px;
 
 .main-page {
-  margin-left: 10%;
+  margin-left: 15%;
   display: flex;
   flex-flow: row wrap;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
   .day-link {
     box-sizing: border-box;
-    width: 15%;
+    width: 13%;
     height: (100% / 6);
     padding: 0.65rem;
+    border-radius: $radius;
+    margin:0.65rem;
 
     display: flex;
     justify-content: center;

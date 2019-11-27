@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="task">
     <h1>Zadanie {{ this.$route.params.id }}</h1>
     <p>{{ this.description }}</p>
     <form>
@@ -62,9 +62,33 @@ export default {
 };
 </script>
 <style lang="scss">
-h1{
-  text-align: center;
-  color:#FFFF;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+$radius:20px;
+$back:#d39569d0;
+.task{
+    color:white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  h1{
+    text-align: center;
+    }
+  form{
+    text-align: center;
+  }
+  input[type="submit"]{
+    display: block
+    ;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border: 0;
+    color:white;
+    background-color: $back ;
+    font-size:20px;
+    border-radius: $radius;
+    margin-left:48%;
+    margin-top:3%;
+    padding:0.64rem;
+    &:hover,
+    &:focus {
+     background-color: darken($back, 4%);
+    }
+  }
 }
 </style>

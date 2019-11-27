@@ -28,10 +28,30 @@ export default {
 
 <style lang="scss" scoped>
 .simple-navbar {
-  display: flex;
+  //display: flex;
 
   .navbar-link {
-    flex: 1 1 0;
+    float:left;
+    width: 33%;
+    text-align: center;
+    color:white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    :hover{
+      text-decoration: none;
+      color:white;
+    }
+    :link{
+      text-decoration: none;
+      color:white;
+    }
+    :visited{
+      text-decoration: none;
+      color:white;
+    }
+    :active{
+      text-decoration: none;
+      color:white;
+    }
   }
 }
 </style>
