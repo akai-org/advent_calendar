@@ -27,3 +27,4 @@ class Answer(models.Model):
     is_checked = models.BooleanField(default=False)
     is_correct = models.BooleanField()
     superkey = models.CharField(max_length=127, primary_key=True)
+
