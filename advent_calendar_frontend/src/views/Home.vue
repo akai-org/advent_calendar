@@ -13,18 +13,18 @@ $text-color: #ffffff;
 $radius:20px;
 
 .main-page {
-  margin-left: 15%;
+  margin-left: 7%;
   display: flex;
   flex-flow: row wrap;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
   .day-link {
     box-sizing: border-box;
-    width: 13%;
+    width: 10%;
     height: (100% / 6);
     padding: 0.65rem;
     border-radius: $radius;
-    margin:0.65rem;
+    margin:0.6rem;
 
     display: flex;
     justify-content: center;
