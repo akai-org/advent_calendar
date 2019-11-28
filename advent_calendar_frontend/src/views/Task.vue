@@ -1,13 +1,16 @@
 <template>
-  <div>
+
+  <div class="task">
     <h1>Zadanie {{ this.taskId }}</h1>
     <p>{{ this.task.level }}</p>
     <p>{{ this.task.content }}</p>
     <p v-if="error.state">{{ this.error.message }}</p>
     <form>
-      <input type="email" v-model="answer.email" />
-      <input type="url" v-model="answer.url" />
-      <input type="file" @change="processFile($event)" />
+      <input type="email" placeholder="Email" v-model="answer.email" />
+      <input type="url" placeholder="Link do repozytorium" v-model="answer.url" />
+      <input class="file-upload" type="file" @change="processFile($event)" />
+      <label for="file-upload" class="custom-file-upload">
+      Wybierz plik</label>
       <input type="submit" value="Wyślij" @click="sendForm" />
     </form>
   </div>
@@ -92,10 +95,12 @@ export default {
 };
 </script>
 <style lang="scss">
-$radius:20px;
-$back:#d39569d0;
+$radius:8px;
+$back:#d18148;
 .task{
+  ::-webkit-input-placeholder { color:rgb(255, 255, 255); }
     color:white;
+    text-align: center;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   h1{
     text-align: center;
@@ -103,17 +108,33 @@ $back:#d39569d0;
   form{
     text-align: center;
   }
-  input[type="submit"]{
-    display: block
-    ;
+  input[type="url"],input[type="email"]{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: $back ;
+    border: 0;
+    color:white;
+    border-radius: $radius;
+    margin:0.5rem;
+    padding:0.9rem;
+    font-size:15px;
+  }
+  input[type="file"] {
+    display: none;
+  }
+  .custom-file-upload,input[type="submit"]{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display:block;
+    cursor: pointer;
+    justify-content: center;
+    width:200px;
     border: 0;
     color:white;
     background-color: $back ;
-    font-size:20px;
+    font-size:15px;
     border-radius: $radius;
-    margin-left:48%;
-    margin-top:3%;
+    margin-top: 1%;
+    margin-left:auto;
+    margin-right:auto;
     padding:0.64rem;
     &:hover,
     &:focus {
