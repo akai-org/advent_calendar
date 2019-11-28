@@ -25,7 +25,7 @@ export default {
       answer: {
         email: '',
         url: '',
-        file: null,
+        file: '',
       },
       error: {
         state: false,
@@ -65,7 +65,7 @@ export default {
       [this.answer.file] = event.target.files;
     },
     sendForm() {
-      if ((this.answer.url === '' && this.answer.file === null) || this.answer.email === '') {
+      if ((this.answer.url === '' && !(this.answer.file instanceof File)) || this.answer.email === '') {
         this.error.state = true;
         this.error.message = 'Pamiętaj o odpowiednim wypełnieniu pól formularza';
         return;
