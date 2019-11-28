@@ -3,13 +3,13 @@
     <h1>Zadanie {{ this.taskId }}</h1>
     <p>{{ this.task.level }}</p>
     <p>{{ this.task.content }}</p>
+    <p v-if="error.state">{{ this.error.message }}</p>
     <form>
       <input type="email" v-model="answer.email" />
       <input type="url" v-model="answer.url" />
       <input type="file" @change="processFile($event)" />
       <input type="submit" value="Wyślij" @click="sendForm" />
     </form>
-    <p v-if="error.state">{{ this.error.message }}</p>
   </div>
 </template>
 
