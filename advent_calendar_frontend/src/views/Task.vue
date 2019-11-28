@@ -67,7 +67,7 @@ export default {
     sendForm() {
       if ((this.answer.url === '' && this.answer.file === null) || this.answer.email === '') {
         this.error.state = true;
-        this.error.state = 'Pamiętaj o odpowiednim wypełnieniu pól formularza';
+        this.error.message = 'Pamiętaj o odpowiednim wypełnieniu pól formularza';
         return;
       }
 
