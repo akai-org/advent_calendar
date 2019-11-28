@@ -2,21 +2,20 @@ from django.db import models
 
 
 class Task(models.Model):
-    TIER = {
-        (0, 'Novice'),
-        (1, 'Apprentice'),
-        (2, 'Adept'),
-        (3, 'Expert'),
-        (4, 'Master'),
-        (5, 'Legendary'),
-    }
-    title = models.CharField(max_length=64)
+    NOVICE = 'Po prostu kod'
+    APPRENTICE = 'Dokumentacja i kod'
+    ADEPT = 'Krew, Stack Overflow i łzy'
+    EXPERT = 'Droga ku depresji'
+    TIER = (
+        (NOVICE, 'Po prostu kod'),
+        (APPRENTICE, 'Dokumentacja i kod'),
+        (ADEPT, 'Krew, Stack Overflow i łzy'),
+        (EXPERT, 'Droga ku depresji'),
+    )
+    title = models.CharField(max_length=127)
     content = models.TextField()
     date = models.DateField()
-    level = models.IntegerField(choices=TIER)
-
-    def __str__(self):
-        return str(self.title) + " " + str(self.date)
+    level = models.CharField(max_length = 31, choices=TIER)
 
 
 class Answer(models.Model):
@@ -27,9 +26,5 @@ class Answer(models.Model):
     url = models.URLField(blank=True)
     is_checked = models.BooleanField(default=False)
     is_correct = models.BooleanField()
+    superkey = models.CharField(max_length=127, primary_key=True)
 
-    class Meta:
-        db_table = 'answer_key'
-        constraints = [
-            models.UniqueConstraint(fields=['email', 'task'], name='unique key')
-        ]
