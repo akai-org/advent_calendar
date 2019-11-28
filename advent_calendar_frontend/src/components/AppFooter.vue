@@ -1,6 +1,6 @@
 <template>
   <div class="footer">
-    With &lt;3 by Dawid, Patryk, Wojciech, Monika @ AKAI 2019
+    With &lt;3 by Monika, Dawid, Patryk, Wojciech  @ AKAI 2019
   </div>
 </template>
 
