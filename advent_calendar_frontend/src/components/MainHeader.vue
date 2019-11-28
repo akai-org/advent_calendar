@@ -5,12 +5,15 @@
 </template>
 
 <style lang="scss" scoped>
-//$header-background: #68191B;
 $text-color: #f1eae2;
 
 .main-header {
-  //background: $header-background;
   color: $text-color;
+  height: 95px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   h1 {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;

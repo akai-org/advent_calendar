@@ -1,15 +1,15 @@
 <template>
   <div class="simple-navbar">
     <div class="navbar-link" v-if="currentTask - 1 >= 1">
-      <router-link :to="`/task/${currentTask - 1}`">
+      <router-link :to="`/task/${currentTask - 1}`" class="navbar-link__tag">
         Poprzedni dzień
       </router-link>
     </div>
     <div class="navbar-link">
-      <router-link to="/" >Strona główna</router-link>
+      <router-link to="/" class="navbar-link__tag">Strona główna</router-link>
     </div>
     <div class="navbar-link" v-if="currentTask + 1 <= 24">
-      <router-link :to="`/task/${currentTask + 1}`">
+      <router-link :to="`/task/${currentTask + 1}`" class="navbar-link__tag">
         Następny dzień
       </router-link>
     </div>
@@ -27,30 +27,53 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.simple-navbar {
-  //display: flex;
+$link-background: #d39569d0;
+$text-color: #ffffff;
 
+.simple-navbar {
+  display: flex;
+  height: 70px;
+  color:white;
+  text-align: center;
   .navbar-link {
-    float:left;
-    width: 33%;
-    text-align: center;
-    color:white;
+    flex: 1 1 0;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    :hover{
+    margin: 0.7rem 0.95rem;
+
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    &__tag {
+      border-radius: 8px;
+      box-sizing: border-box;
+      height: 100%;
+      width: 100%;
+
+      align-items: center;
+      display: flex;
+      justify-content: center;
+
+      background: $link-background;
+      color: $text-color;
+      font-size: 1.2rem;
       text-decoration: none;
-      color:white;
-    }
-    :link{
-      text-decoration: none;
-      color:white;
-    }
-    :visited{
-      text-decoration: none;
-      color:white;
-    }
-    :active{
-      text-decoration: none;
-      color:white;
+
+      &:visited,
+      &:hover,
+      &:active,
+      &:focus {
+        color: $text-color;
+      }
+
+      &:hover,
+      &:focus {
+        background-color: darken($link-background, 6.5%);
+      }
+
+      &:active {
+        background-color: darken($link-background, 11%);
+      }
     }
   }
 }
