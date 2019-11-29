@@ -25,9 +25,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'rest_framework',
     'our_calendar',
 ]
+
+CORS_ORIGIN_ALLOW_ALL = True
+
+MIDDLEWARE_CLASSES = (
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.BrokenLinkEmailsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
