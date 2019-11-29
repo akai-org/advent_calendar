@@ -7,7 +7,8 @@ from .views import TaskViewset, answer_list
 router = routers.DefaultRouter()
 router.register(r'tasks', TaskViewset)
 
+
 urlpatterns = [
     url(r'^', include(router.urls)),
-    path('create', answer_list, name="create")
+    path('answer', answer_list, name="create")
 ]

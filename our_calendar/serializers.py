@@ -15,7 +15,6 @@ class TaskFullSerializer(serializers.ModelSerializer):
 
 
 class AnswerPostSerializer(serializers.ModelSerializer):
-    task = serializers.StringRelatedField()
     class Meta:
         model = Answer
-        fields = ['task','date','email','file','url']
+        fields = ['task','email','file','url','date','is_checked','is_correct','superkey']

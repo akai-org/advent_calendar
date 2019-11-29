@@ -10,5 +10,5 @@ class TaskAdmin(admin.ModelAdmin):
 
 @admin.register(Answer)
 class AnswerAdmin(admin.ModelAdmin):
-    list_display = ['task','is_checked','is_correct','date']
+    list_display = ['task','date', 'email','is_checked','is_correct']
     list_filter = ['task','is_checked','is_correct','date']
