@@ -27,7 +27,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$link-background: #01442a;
+$link-background: #013d26;
 $text-color: #ffffff;
 
 .simple-navbar {

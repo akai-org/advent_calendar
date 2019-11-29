@@ -11,31 +11,25 @@
 </template>
 
 <style lang="scss" scoped>
-$link-background: #d39569d0;
+$link-background: #013d26;
 $text-color: #ffffff;
-$radius:20px;
+$radius:8px;
 .main-page {
   display: flex;
   justify-content: center;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  .day-link {
-    box-sizing: border-box;
-    width: 10%;
-    height: (100% / 6);
-    padding: 0.65rem;
-    border-radius: $radius;
-    margin:0.6rem;
   &__container {
     width: 80%;
     display: flex;
     flex-flow: row wrap;
   }
-
   .day-link {
-    height: (100% / 6);
+    box-sizing: border-box;
     width: 15%;
-
-    margin: 1rem 0.65rem;
+    height: (100% / 6);
+    padding: 0.5rem;
+    border-radius: $radius;
+    margin: 0.5rem;
 
     align-items: center;
     display: flex;
@@ -74,5 +68,5 @@ $radius:20px;
     }
   }
 }
-}
+
 </style>

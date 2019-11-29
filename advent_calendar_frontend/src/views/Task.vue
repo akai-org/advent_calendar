@@ -8,9 +8,10 @@
     <form>
       <input type="email" placeholder="Email" v-model="answer.email" />
       <input type="url" placeholder="Link do repozytorium" v-model="answer.url" />
-      <input class="file-upload" type="file" @change="processFile($event)" />
       <label for="file-upload" class="custom-file-upload">
-      Wybierz plik</label>
+      Wybierz plik
+      </label>
+      <input id="file-upload" type="file" @change="processFile($event)" />
       <input type="submit" value="Wyślij" @click="sendForm" />
     </form>
   </div>
