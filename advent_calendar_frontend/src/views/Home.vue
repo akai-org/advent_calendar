@@ -25,18 +25,18 @@ $radius:8px;
   }
   .day-link {
     box-sizing: border-box;
+    border-radius: $radius;
     width: 15%;
     height: (100% / 6);
-    padding: 0.5rem;
-    border-radius: $radius;
     margin: 0.5rem;
 
     align-items: center;
     display: flex;
     justify-content: center;
 
+
     &__tag {
-      border-radius: 8px;
+      border-radius: $radius;
       box-sizing: border-box;
       height: 100%;
       width: 100%;
