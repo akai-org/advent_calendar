@@ -1,7 +1,7 @@
-  FROM python
+FROM python
 WORKDIR /app
 COPY . /app
-RUN pip install -r advent_calendar/requirements.txt
+RUN pip install -r requirements.txt
 ENTRYPOINT rm -f db.sqlite3 &&\
            rm -f ./*/migrations/0*.py &&\
            python manage.py makemigrations &&\
