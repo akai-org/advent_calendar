@@ -6,11 +6,14 @@
 3. Run that venv: `source env/bin/activate`(MAC),/ 
     WINDOWS google say `\env\Scripts\activate.bat` if it doesnt work do it `cd env` `cd Scripts` `activate`
 4. Install dependencies: `pip install -r requirements.txt`,
-5. Install frontend dependencies: `npm install`
-6. Compile frontend assets: `npm run dev`,
-7. (optional) Change database settings in settings.py if you want to use different (non-sqlite) db backend, 
-8. Migrate database: `python manage.py migrate`,
-9. To run dev server: `python manage.py runserver`
+5. (optional) Change database settings in settings.py if you want to use different (non-sqlite) db backend, 
+6. Migrate database: `python manage.py migrate`,
+7. To run dev server: `python manage.py runserver`
+
+### with Docker
+1. Download repo
+2. Run docker-compose up in it
+3. Ready. Thing is accessible at localhost:8000. Stopping and starting containers again results in making whole new migrations and reseting database (sqlite) content. 
 
 ## Tips for devs
 
