@@ -22,3 +22,24 @@ If you installed new pip dependency you need to allow others to know about it. T
 in one file, which in this case in named `requirements.txt`. You can do this by typing following command: 
 
 `pip freeze > requirements.txt`
+
+## Deploy Nginx
+- install Nginx, download app
+- nginx configuration, **remember to change server_name**: 
+```
+server {
+    listen 80;
+    server_name HOSTNAME_HERE;
+
+    location / {
+        include proxy_params;
+        proxy_pass http://localhost:8000;
+    }
+}
+```
+- ln -s do enabled,
+- wszystko dalej jak w *how to install*,
+- allowed hosts - add host
+- if table doesnt exist: `python manage.py makemigrations; python manage.py migrate`
+- create admin: `python manage.py createsuperuser` and follow instructions
+
