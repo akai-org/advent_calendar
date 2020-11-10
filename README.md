@@ -56,10 +56,10 @@ server {
 
 ### Adresses api
 /api/tasks/all/     __get all tasks \
-`/api/tasks/all/id`     __get one task by id \
+`/api/tasks/all/id/`     __get one task by id \
 
 /api/tasks/now/     __get all tasks with taskDate >= today \
-`/api/tasks/now/id`    __get one tasks by id (only with taskDate >= today) \
+`/api/tasks/now/id/`    __get one tasks by id (only with taskDate >= today) \
 
 /api/tasks/answer     __post userAnswer and check if it is correct (return true or false)
 
