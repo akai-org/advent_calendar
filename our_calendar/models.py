@@ -5,17 +5,17 @@ from django.utils.timezone import now
 class Task(models.Model):
     NOVICE = 'Po prostu kod'
     APPRENTICE = 'Dokumentacja i kod'
-    ADEPT = 'Krew, Stack Overflow i łzy'
+    ADEPT = 'Dokumentacja, Stack Overflow i łzy'
     EXPERT = 'Droga ku depresji'
     TIER = (
         (NOVICE, 'Po prostu kod'),
         (APPRENTICE, 'Dokumentacja i kod'),
-        (ADEPT, 'Krew, Stack Overflow i łzy'),
+        (ADEPT, 'Dokumentacja, Stack Overflow i łzy'),
         (EXPERT, 'Droga ku depresji'),
     )
     taskDay = models.IntegerField("day of task", default=0)
     taskDate = models.DateField("date of task", default=now)
-    level = models.CharField(max_length=31, choices=TIER, default=NOVICE)
+    level = models.CharField(max_length=64, choices=TIER, default=NOVICE)
     taskContent = models.TextField(default="Some good stuff for user")
     category = models.CharField(max_length=64, default="JavaScript")
 

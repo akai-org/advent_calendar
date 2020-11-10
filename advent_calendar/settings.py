@@ -11,11 +11,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '^)&ibht7ss_z^65^#0qzw638s#1p5k9-b4ksy126m7ng#%(al#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
+    '34.89.167.143',
+    'api.advent.akai.org.pl'
 ]
 
 
