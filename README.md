@@ -28,11 +28,11 @@ in one file, which in this case in named `requirements.txt`. You can do this by 
 
 ### Before the first implementation, 
 create a new secret key. \
-python generateSecretKey.py \
-Copy it and paste it into advent_calendar / setting.py up to line 11. \
-SECRET_KEY = 'new secret key' \
+`python generateSecretKey.py` \
+Copy it and paste it into `advent_calendar / setting.py` up to line 11. \
+SECRET_KEY = '`new secret key`' \
 e.g. \
-SECRET_KEY = 'n6c3 = 2w95mu $ _g9 @ = v = ulw2-4vxy = 4cwoc2dm% & a48 & 1! 43q7b' \
+SECRET_KEY = '`n6c3 = 2w95mu $ _g9 @ = v = ulw2-4vxy = 4cwoc2dm% & a48 & 1! 43q7b`' \
 
 ## Deploy Nginx
 - install Nginx, download app
