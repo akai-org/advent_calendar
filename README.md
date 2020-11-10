@@ -58,11 +58,9 @@ server {
 Adresses api
 /api/tasks/all/ <-----get all tasks
 /api/tasks/all/<id> <------- get one task by id
-/api/tasks/all/?search=<date> <----- get tasks by date(year-month-day)
 
 /api/tasks/now/ <----- get all tasks with taskDate >= today
 /api/tasks/now/<id> <----- get one tasks by id (only with taskDate >= today)
-/api/tasks/now/?search=<date> <----- get tasks by date(year-month-day)
 
 /api/tasks/answer  <----- post userAnswer and check if it is correct (return true or false)
 
@@ -70,4 +68,4 @@ Adresses api
 
 /admin/ <----- admin panel
 
-Api is sort by taskDate.
+Api is sort by taskDay.
