@@ -4,7 +4,7 @@
 1. Download repo, 
 2. Initialize virtual environment in it: `python -m venv env`,
 3. Run that venv: \
-    LLINUX or MAC `source env/bin/activate,\
+    LLINUX or MAC `source env/bin/activate`, \
     WINDOWS google say `\env\Scripts\activate.bat` if it doesnt work do it `cd env` `cd Scripts` `activate` `cd ..` `cd ..`
 4. Install dependencies: `pip install -r requirements.txt`,
 5. (optional) Change database settings in settings.py if you want to use different (non-sqlite) db backend, 
