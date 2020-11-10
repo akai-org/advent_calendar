@@ -26,6 +26,14 @@ in one file, which in this case in named `requirements.txt`. You can do this by 
 
 `pip freeze > requirements.txt`
 
+###
+Before the first implementation, create a new secret key.
+python generateSecretKey.py
+Copy it and paste it into advent_calendar / setting.py up to line 11.
+SECRET_KEY = 'new secret key'
+e.g.
+SECRET_KEY = 'n6c3 = 2w95mu $ _g9 @ = v = ulw2-4vxy = 4cwoc2dm% & a48 & 1! 43q7b'
+
 ## Deploy Nginx
 - install Nginx, download app
 - nginx configuration, **remember to change server_name**: 
@@ -46,3 +54,20 @@ server {
 - if table doesnt exist: `python manage.py makemigrations; python manage.py migrate`
 - create admin: `python manage.py createsuperuser` and follow instructions
 
+###
+Adresses api
+/api/tasks/all/ <-----get all tasks
+/api/tasks/all/<id> <------- get one task by id
+/api/tasks/all/?search=<date> <----- get tasks by date(year-month-day)
+
+/api/tasks/now/ <----- get all tasks with taskDate >= today
+/api/tasks/now/<id> <----- get one tasks by id (only with taskDate >= today)
+/api/tasks/now/?search=<date> <----- get tasks by date(year-month-day)
+
+/api/tasks/answer  <----- post userAnswer and check if it is correct (return true or false)
+
+/api/today/ <------ get today's date
+
+/admin/ <----- admin panel
+
+Api is sort by taskDate.

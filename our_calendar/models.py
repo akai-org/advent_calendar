@@ -5,12 +5,12 @@ from django.utils.timezone import now
 class Task(models.Model):
     NOVICE = 'Po prostu kod'
     APPRENTICE = 'Dokumentacja i kod'
-    ADEPT = 'Krew, Stack Overflow i łzy'
+    ADEPT = 'Dokumentacja, Stack Overflow i łzy'
     EXPERT = 'Droga ku depresji'
     TIER = (
         (NOVICE, 'Po prostu kod'),
         (APPRENTICE, 'Dokumentacja i kod'),
-        (ADEPT, 'Krew, Stack Overflow i łzy'),
+        (ADEPT, 'Dokumentacja, Stack Overflow i łzy'),
         (EXPERT, 'Droga ku depresji'),
     )
     taskDay = models.IntegerField("day of task", default=0)

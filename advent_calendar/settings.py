@@ -16,6 +16,8 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
+    '34.89.167.143',
+    'api.advent.akai.org.pl'
 ]
 
 
