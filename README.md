@@ -7,18 +7,15 @@
     LLINUX or MAC `source env/bin/activate`, \
     WINDOWS google say `\env\Scripts\activate.bat` if it doesnt work do it `cd env` `cd Scripts` `activate` `cd ..` `cd ..`
 4. Install dependencies: `pip install -r requirements.txt`,
-5. Change file `.env.example` in `advent_calendar` to `.env`
+5. Create a new file such as `.env.example` in `advent_calendar` and chance his name to `.env`
 6. Create a new secret key: `python generateSecretKey.py`
 7. Copy it and paste it into `advent_calendar / .env` up to SECRET_KEY \
     e.g. `SECRET_KEY=n-9#+mf&sziujs^g1!+liv5gn@%0*)7dp)gtm^16eqyl+bvjlr`
 8. (optional) Change database settings in settings.py if you want to use different (non-sqlite) db backend, 
 9. Make migrations: `python manage.py makemigrations`,
 10. Migrate database: `python manage.py migrate`,
-11. To run dev server: `python manage.py runserver`,
-12. Create admin: `python manage.py createsuperuser`
-
-    
-
+11. Create admin: `python manage.py createsuperuser`,
+12. To run dev server: `python manage.py runserver`
 
 ### with Docker
 1. Download repo
@@ -54,16 +51,16 @@ server {
 - create admin: `python manage.py createsuperuser` and follow instructions
 
 ### Adresses api
-/api/tasks/all/     __get all tasks \
-`/api/tasks/all/id/`     __get one task by id \
+-/api/tasks/all/     __get all tasks 
+-`/api/tasks/all/id/`     __get one task by id
 
-/api/tasks/now/     __get all tasks with taskDate >= today \
-`/api/tasks/now/id/`    __get one tasks by id (only with taskDate <= today) \
+-/api/tasks/now/     __get all tasks with taskDate <= today
+-`/api/tasks/now/id/`    __get one tasks by id (only with taskDate <= today)
 
-/api/tasks/answer     __post userAnswer and check if it is correct (return true or false)
+-/api/tasks/answer     __post userAnswer and check if it is correct (return true or false)
 
-/api/today/     __get today's date
+-/api/today/     __get today's date
 
-/admin/     __admin panel
+-/admin/     __admin panel
 
 Api is sort by taskDay.
