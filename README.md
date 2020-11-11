@@ -10,7 +10,7 @@
 5. Change file `.env.example` in `advent_calendar` to `.env`
 6. Create a new secret key: `python generateSecretKey.py`
 7. Copy it and paste it into `advent_calendar / .env` up to SECRET_KEY \
-    e.g. `SECRET_KEY=n-9#+mf&sziujs^g1!+liv5gn@%0*)7dp)gtm^16eqyl+bvjlr` \
+    e.g. `SECRET_KEY=n-9#+mf&sziujs^g1!+liv5gn@%0*)7dp)gtm^16eqyl+bvjlr`
 8. (optional) Change database settings in settings.py if you want to use different (non-sqlite) db backend, 
 9. Make migrations: `python manage.py makemigrations`,
 10. Migrate database: `python manage.py migrate`,
