@@ -86,7 +86,7 @@ target/
 __pycache__/
 local_settings.py
 
-.env
+advent_calendar/.env
 db.sqlite3
 node_modules/
 .idea/
