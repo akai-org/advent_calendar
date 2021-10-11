@@ -1,0 +1,14 @@
+
+[Unit]
+Description=Django Web App
+After=network.target
+
+[Service]
+PIDFile=/var/run/djangoBootstrap.pid
+User={{ deploy_user }}
+Group={{ deploy_group }}
+ExecStart={{ venv_python }} {{ app_dir }}/manage.py runserver
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target

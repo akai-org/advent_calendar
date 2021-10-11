@@ -1,0 +1,74 @@
+---
+- hosts: all
+
+  vars:
+    http_port: 80
+    app_port: 8000
+    app_name: django_advent_calendar
+    host_addr: <address> # TODO
+    deploy_user: <user> # TODO
+    deploy_group: <user> # TODO
+    code_repository_url: https://github.com/akai-org/advent_calendar
+    app_dir: /home/{{ deploy_user }}/{{ app_name }}
+    venv_dir: "/home/{{ deploy_user }}/{{ app_name }}/envs"
+    venv_python: "{{ venv_dir }}/bin/python3"
+
+  tasks:
+    - name: install packages
+      apt:
+        name: "{{ item }}"
+        state: present
+        update_cache: yes
+      with_items:
+        - git
+        - nginx
+        - virtualenv
+      become: yes
+
+    - name: clone latest code
+      git: repo={{ code_repository_url }} dest={{ app_dir }}
+
+    - name: create a virtualenv directory
+      file: path={{ venv_dir }} state=directory
+
+    - name: install dependencies
+      pip: requirements={{ app_dir }}/requirements.txt virtualenv={{ venv_dir }} virtualenv_python=python3.7
+
+    - name: create env
+      template: src=env.j2 dest={{ app_dir }}/advent_calendar/.env
+      become: yes
+
+    - name: make migrations
+      shell: "{{ venv_python }} {{ app_dir }}/manage.py makemigrations"
+      become: yes
+
+    - name: make manage.py executable
+      file:
+        path: "{{ app_dir }}/manage.py"
+        mode: 0777
+
+    - name: migrate database
+      django_manage: app_path={{ app_dir }} command=migrate virtualenv={{ venv_dir }}
+      become: yes
+
+    - name: create nginx config file
+      template: src=nginx_default.j2 dest=/etc/nginx/sites-available/default
+      become: yes
+      notify:
+        - restart nginx
+
+    - name: setup systemd service
+      template: src=django-bootstrap.service.j2 dest=/etc/systemd/system/django-bootstrap.service
+      become: yes
+      notify:
+        - restart app
+        - restart nginx
+
+  handlers:
+    - name: restart nginx
+      service: name=nginx state=restarted enabled=yes
+      become: yes
+
+    - name: restart app
+      service: name=django-bootstrap state=restarted enabled=yes
+      become: yes
